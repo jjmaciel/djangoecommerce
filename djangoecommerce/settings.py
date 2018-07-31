@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # armazena o diretório raiz do projeto (diretorio do projeto (arquivo absoluto))
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -123,5 +124,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'     # esta é a url de arquivo estático. o Django sabe que aqui dentro fica os aquivos css/js
 
+# configuração solicitada pelo heroku para para subtituir as configurações originais de banco de dados
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWADED_PROTO', 'https')
+
+# configuração dos dominios que terão acesso a esta aplicação. O * é para qualquer domínio
+ALLOWED_HOSTS = ['*']
+
 # lista de diretórios alternaticos. Se eu quiser colocar arquivos estáticos em outra pasta que não seja static
-#
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
