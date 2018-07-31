@@ -1,0 +1,107 @@
+### Aula 1 - O projeto Django ###
+- Dowload do thema do site https://bootswatch.com/
+- Dowload do thema .zip já customizado pelo professor
+
+### Aula 2 - Ambiente Pyrhon e Django (plugins, comunidade) ###
+- falando um pouco de Django
+- pacotes Django
+- código fonte
+- meta programação para Django
+
+### Aula 3 - Instalação e Configuração do Ambiente (Linux) ###
+- instalando o python
+- instalando o virtualenv
+- criando o ambiente virtual com: virtualenv venv -p python3.5
+	venv é o nome que eu dou para o diretorio, mas pode ser batata
+	-p é para definir o python a ser instalado
+- instalando o django com pip
+	pip install django (ele pega a última versão)
+	pip install django==2.0 (ele instala a referida versão)
+- criando o projeto django com: django-admin startproject djangoecommerce .
+	a importância do "." no final. Se não colocar ele vai criar uma pasta djangoecommerce e
+	mais uma djangoecommerce dentro para ai colocar os arquivos de configurações.
+	Normalmente se usa o nome do projeto, mas pode ser batata.
+
+### Aula 4 - Instalação e Configuração do Ambiente (OSX) ###
+### Aula 5 - Instalação e Configuração do Ambiente (Windows) ###
+
+
+### Aula 6 - Primeira App Django ###
+- primeiras configurações do settyngs
+- criando o aap core com: ./manage.py startapp core
+	o django é composto por vários Apps e core é o nome do app principal, o App mais genérico
+	mas pode ser batata
+- configurando urls.py
+- configurando views.py
+
+
+### Aula 7 - Sistema de templates (Template tags, variávels e filtros) ###
+- criando o diretório templates
+- criado arquivos html
+- chamando arquivos html de dentro do view
+- enviando contextos do view para o html
+- exemplificando tags dentro do arquivo html
+
+### Aula 8 - Trabalhando com arquivos estáticos css, js ###
+- configurando settings para arquivos estátics
+- criando o diretório static
+- crianda a template tag stati dentro do html
+
+### Aula 9 - Criando templates com herança ###
+- criando templates html para carregar em todas as páginas html. Chamado base.html
+- block e endblock  inserindo blocos de html
+- block.super pegando conteúdo da base
+- criando as funções na views para chamar os htmls
+- configurando urls.py para as demais páginas
+- nomeando urls dentro de urls.py name='nomeurl'
+- {% url %} usando a template tag url
+
+### Aula 10 - Adicionando os primeiros testes ###
+- deletando o arquivo tests.py original
+- criando a pasta tests
+- criando obrigatoriamente o arquivo __init__.py
+- criando as funções SetUp e tearDown
+
+
+
+### Aula 18 - Django Admin ###
+-
+
+### Aula 28 ###
+- adicionado uma lib 'widget_tweaks' no local_settings.py
+- utilização desta lib no contact.html
+- criando a classe de contato (e também as tabelas do DB)
+
+### Aula 29 - Enviando e-mail de contato ###
+- enviando e-mail do contato
+- configurando e-mail no settings
+- formatando o corpo do e-mail no forms.py
+- recebendo dados e enviando no views.py
+- criando uma div success
+
+### Aula 30 - Testando o Form de contato ###
+- testes se vai rodar a pg
+- tetes de erro de formulário
+- testes de sucesso no envio do formulário
+
+### Aula 31 - Objetos "chamaveis" em python ###
+- exemplificando o uso do jupyter
+- instalação do jupyter (pip install jupyter)
+
+### Aula 32 - Class-based Views ###
+- criar clases para as views no lugar de funções
+- exemplos para chamar arquivos do template usando do django.views.generic
+    - View
+    - TemplateView
+
+### Aula 33 - Melhorando a listagem de produtos com o ListView ###
+- Criando mais classes para as views de catalog
+- Para que serve context_object_name
+- get_queryset para que serve
+- get_context_data para que serve
+
+### Aula 34 - Paginação com Custom TemplateTag ###
+- paginate_by
+- import Paginator
+- criando um diretorio templatetags  (realmente tem que ser este nome)
+- criando um template de paginação
